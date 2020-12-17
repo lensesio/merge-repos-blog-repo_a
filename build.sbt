@@ -8,23 +8,29 @@ lazy val root = (project in file("."))
     libraryDependencies ++= testDeps,
     description := "Root of the project",
     publish / skip := true
-  ).aggregate(submodule1, submodule2)
-
+  )
+  .aggregate(submodule1, submodule2, submodule3)
 
 lazy val submodule1 = (project in file("modules/submodule1"))
   .settings(commonSettings)
   .settings(
     name := "Submodule1",
     libraryDependencies ++= testDeps,
-    description := "Code for submodule 1",
+    description := "Code for submodule 1"
   )
-
 
 lazy val submodule2 = (project in file("modules/submodule2"))
   .settings(commonSettings)
   .settings(
     name := "Submodule2",
     libraryDependencies ++= testDeps,
-    description := "Code for submodule 2",
+    description := "Code for submodule 2"
   )
 
+lazy val submodule3 = (project in file("modules/submodule3"))
+  .settings(commonSettings)
+  .settings(
+    name := "Submodule3",
+    libraryDependencies ++= testDeps,
+    description := "Code for submodule 3"
+  )
